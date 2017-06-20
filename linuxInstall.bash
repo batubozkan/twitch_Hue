@@ -50,7 +50,7 @@ while [[ -z $yn1 ]]; do
 				printf "\nYour IP address is not local, try again.\n\n"
 				read -p "Please put your Hue Bridge IP Address here: " ip1
 			done
-			sed -i "11i  host:     '$ip1', // Get this from setup.js" setup_second.js
+			sed -i "11i  host:     '$ip1',               // Get this from setup_first.js" setup_second.js
 			sed -i "15ivar hueIP = '$ip1' //Enter Hue bridge IP inside of the quotes" config.js
 			sleep 1
 			while [[ -z $yn2 ]]; do
