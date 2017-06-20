@@ -5,6 +5,9 @@ Dependecies
 -----------
 
 * [Node.js](https://nodejs.org/en/download/)
+* [tmi.js](https://www.tmijs.org)
+* [HueJay](https://github.com/sqmk/huejay)
+
 
 Installation for Linux
 ----------------------
