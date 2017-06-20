@@ -1,0 +1,24 @@
+{
+  "name": "twitch_Hue",
+  "version": "0.0.1",
+  "description": "Twitch Bot which changes colors of Philips Hue lamps based on cheers and subs",
+  "readme": "README.md",
+  "maintainers": [
+    "batubozkan (batu@videoyun.org)"
+  ],
+  "author": "batubozkan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batubozkan/twitch_Hue.git"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "huejay": "^1.5.0",
+    "tmi.js": "^1.2.1"
+  },
+  "scripts": {
+    "bot": "node bot.js",
+    "setup-first": "node setup_first.js",
+    "setup-second": "node setup_second.js"
+  }
+}
