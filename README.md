@@ -13,7 +13,6 @@ Clone repository to a folder.
 Open a terminal to that folder.
 Run these commands on the terminal and follow the Instructions from the Script:
 
-        npm install
         chmod +x linuxInstall.bash
         ./linuxInstall.bash
         
@@ -26,7 +25,13 @@ Installation for Windows
 
 Clone repository to a folder.
 Open a command prompt to that folder.
+
+Run the command below first:
+
+        npm install
+
 Make sure that your Hue Bridge is connected on the same network as the computer.
+
 Run the command below:
 
         node setup_first.js
