@@ -11,7 +11,7 @@ Installation for Linux
 
 Clone repository to a folder.
 Open a terminal to that folder.
-Run these commands on the terminal and follow the Instructions from the Script.:
+Run these commands on the terminal and follow the Instructions from the Script:
 
         npm install
         chmod +x linuxInstall.bash
