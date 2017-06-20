@@ -1,14 +1,14 @@
 /*
 TO USE THIS SCRIPT YOU HAVE TO BE ON THE SAME NETWORK AS THE HUE BRIDGE.
 
-DONT FORGET TO PRESS HUE BRIGDE BUTTON BEFORE STARTING THE SCRIPT!
+DONT FORGET TO PRESS HUE BRIDGE BUTTON BEFORE STARTING THE SCRIPT!
 */
 
 let huejay = require('huejay');
 
 // Create Hue bridge connection
 let client = new huejay.Client({
-  host:     '', // Get this from setup.js
+  host:     '',               // Get this from setup_first.js
   port:     80,               // Optional
   username: '',               // Not required here
   timeout:  15000,            // Optional
