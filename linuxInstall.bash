@@ -41,6 +41,8 @@ while [[ -z $yn1 ]]; do
 				printf "\nThis computer doesn't have node.js installed.\nPlease install and re-run this script.\n\n"
 				exit
 			fi
+			npm install
+			sleep 1
 			printf "\n"
 			node setup_first.js
 			printf "\n"
