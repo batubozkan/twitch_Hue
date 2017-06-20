@@ -40,10 +40,13 @@ Run the command below:
 Copy everything from the output.
 
 Paste the username to [config.js's 17th line](https://github.com/batubozkan/twitch_Hue/blob/master/config.js#L17).
+
 Enter the lamp IDs you want to use to [config.js's 29th line](https://github.com/batubozkan/twitch_Hue/blob/master/config.js#L29).
 
 Enter your Twitch Channel Name to [config.js's 12th line](https://github.com/batubozkan/twitch_Hue/blob/master/config.js#L12).
+
 Enter your Bot Account's Name to [config.js's 9th line](https://github.com/batubozkan/twitch_Hue/blob/master/config.js#L9).
+
 Enter your Bot Account's oAuth Key to [config.js's 10th line](https://github.com/batubozkan/twitch_Hue/blob/master/config.js#L10). You can get it from [here.](https://twitchapps.com/tmi/)
 
 Run the command below to run the bot:
