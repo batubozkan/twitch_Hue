@@ -24,6 +24,15 @@ function test_if_local {
 	fi
 }
 
+function does_it_exist {
+	if [[ -z $1 ]]; then
+		echo "$1"
+		return 1
+	else
+		return 0
+	fi
+}
+
 if test_command "node" >/dev/null; then
 	isNodeInstalled=yes
 fi
@@ -65,7 +74,7 @@ while [[ -z $yn1 ]]; do
 						printf "\n"
 						printf "\nPlease copy or note the stuff that came up above.\nDo not use Ctrl+C here.\n\n"
 						while [[ -z $yn3 ]]; do
-							read -p "Have you done it? [Yes / No]" yn3
+							read -p "Have you done it? [Yes / No] " yn3
 							case $yn3 in
 								[Yy]* )
 									until does_it_exist "$userName" >/dev/null; do
@@ -76,25 +85,25 @@ while [[ -z $yn1 ]]; do
 
 									until does_it_exist "$TWchannel" >/dev/null; do
 										printf "\nYou need to insert your Twitch Channel Name below to continue.\n\n"
-										read -p "What is your Twitch Channel Name? " TWchannel
+										read -p "What is your Twitch Channel Name?: " TWchannel
 									done
 									sed -i "12i    channels: ["#$TWchannel"] // Enter channel name after #" config.js
 
 									until does_it_exist "$TWuserName" >/dev/null; do
 										printf "\nYou need to insert your Twitch Bot's Username below to continue.\n\n"
-										read -p "What is your Twitch Bot's Username? " TWuserName
+										read -p "What is your Twitch Bot's Username?: " TWuserName
 									done
 									sed -i "9i        username: "$TWuserName", // Enter username of the bot inside of quotes" config.js
 
 									until does_it_exist "$TWoauthPass" >/dev/null; do
 										printf "\nYou need to insert your Twitch Bot's oAuth key below to continue.\nYou need to go to https://twitchapps.com/tmi/ to get it.\n\n"
-										read -p "What is your Twitch Bot's oAuth key? " TWoauthPass
+										read -p "What is your Twitch Bot's oAuth key?: " TWoauthPass
 									done
 									sed -i "10i        password: "$TWoauthPass" // Get your bots oauth key from here https://twitchapps.com/tmi/" config.js
 
 									until does_it_exist "$hueLamps" >/dev/null; do
 										printf "\nYou need to insert your Hue Lamps' IDs below to continue.\nExample without quotes, \"2, 4\"\n\n"
-										read -p "What is your Hue Lamps' IDs? " hueLamps
+										read -p "What is your Hue Lamps' IDs?: " hueLamps
 									done
 									sed -i "29ivar hueLamps = [$hueLamps] // You can put multiple Lamp ID's. (Example: var hueLamps = [2, 4])" config.js
 
