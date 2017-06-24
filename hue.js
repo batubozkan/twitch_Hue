@@ -72,8 +72,8 @@ function hueLamp(alertType){
       client.lights.getById(lampID)
       .then(light => {
 
-  		  var hue = colorArray[colorEffects[color].colorName].hue +"";
-        // For random rainbow effect effect
+        var hue = colorArray[colorEffects[color].colorName].hue +"";
+        // For random rainbow effect
         hue.indexOf("[rnd]") === 0 ? (hue = hue.split("[rnd]").join(""), hue = Math.floor(Math.random()*(hue.split("-")[1] - hue.split("-")[0] + 1) + hue.split("-")[1]), light.hue = parseInt(hue)) : light.hue = colorArray[colorEffects[color].colorName].hue;
 
           light.saturation = colorArray[colorEffects[color].colorName].saturation;
