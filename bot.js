@@ -25,20 +25,20 @@ client.on("resub", function (channel, username, months, message) {
   console.log(chalk.green(username) + " resubbed for " + months + " months!");  //Print username of the subscriber to console
 
   //Check sub time for Hue effect.
-  if(months < 3){
+  if(months >= 24){
+    months = "24";
+  }
+  else if(months >= 12){
+    months = "12";
+  }
+  else if(months >= 6){
+    months = "6";
+  }
+  else if(months >= 3){
+    months = "3";
+  }
+  else{
     months = "1";
-  }
-  else if(months >= 3 && months < 6){
-    months = "3"
-  }
-  else if(months >= 6 && months < 12){
-    months = "6"
-  }
-  else if(months >= 12 && months < 24){
-    months = "12"
-  }
-  else if(months >= 24){
-    months = "24"
   }
 
   hue.hueLamp("sub_" + months);
