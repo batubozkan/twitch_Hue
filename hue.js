@@ -17,7 +17,7 @@ function hueLamp(alertType){
 
   if(status === 1){ // If there is an alert happening put the new alert to queue
       jobQueue.push(alertType);
-      console.log("New job request (" + alertType + ") has been added to queue as there is an ongoing process");
+      console.log("New job request (" + alertType + ") has been added to queue since there is an ongoing process.");
     }
     else {
       status = 1; // Lock alert to this one
@@ -27,17 +27,17 @@ function hueLamp(alertType){
 
       // If you want lower or higher bits to trigger alerts modify cheerOptions in config.js
 
-      if(alertType >= config.cheerOptions.cheerTier1 && alertType < config.cheerOptions.cheerTier2){
-        alertName = "bit_t1";
+      if(alertType >= config.cheerOptions.cheerTier4){
+        alertName = "bit_t4";
       }
-      else if(alertType >= config.cheerOptions.cheerTier2 && alertType < config.cheerOptions.cheerTier3){
-        alertName = "bit_t2";
-      }
-      else if(alertType >= config.cheerOptions.cheerTier3 && alertType < config.cheerOptions.cheerTier4){
+      else if(alertType >= config.cheerOptions.cheerTier3){
         alertName = "bit_t3";
       }
-      else if(alertType >= config.cheerOptions.cheerTier4){
-        alertName = "bit_t4";
+      else if(alertType >= config.cheerOptions.cheerTier2){
+        alertName = "bit_t2";
+      }
+      if(alertType >= config.cheerOptions.cheerTier1){
+        alertName = "bit_t1";
       }
       else{
         alertName = alertType;
@@ -49,10 +49,10 @@ function hueLamp(alertType){
            clearInterval(intervalID);
            config.hueLamps.map(function(lampID) { changeColor(lampID, "normal"); });
            status = 0;
-           console.log("Jobs Done! Checking queue for more jobs.");
+           console.log("Jobs done, checking the queue for more jobs...");
 
            if(jobQueue.length > 0) {
-             console.log("New Job!");
+             console.log("New job found.");
 
              var newAlertType = jobQueue[0];
 
@@ -89,7 +89,7 @@ function hueLamp(alertType){
       .then(light => {
       })
       .catch(error => {
-      console.log('Something went wrong');
+      console.log('Something went wrong.');
       console.log(error.stack);
       });
     };
